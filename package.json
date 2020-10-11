@@ -8,7 +8,7 @@
     "@testing-library/user-event": "^7.1.2",
     "@types/jest": "^24.0.0",
     "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
+    "@types/react": "^16.9.51",
     "@types/react-dom": "^16.9.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -20,8 +20,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "$(npm bin)/eslint -c ./.eslintrc.js 'src/**/*.{ts,tsx}'",
-    "lint:fix": "$(npm bin)/eslint --fix -c ./.eslintrc.js 'src/**/*.{ts,tsx}'"
+    "lint": "$(npm bin)/eslint -c ./.eslintrc.js 'src/**/*.{ts,tsx}' && prettier --write \"./**/*.ts\" \"./**/*.tsx\"",
+    "lint:fix": "$(npm bin)/eslint --fix -c ./.eslintrc.js 'src/**/*.{ts,tsx}'",
+    "format": "prettier --write 'src/**/*.{ts,tsx}'"
   },
   "browserslist": {
     "production": [
@@ -39,12 +40,15 @@
     "@typescript-eslint/eslint-plugin": "2.x",
     "@typescript-eslint/parser": "2.x",
     "babel-eslint": "10.x",
+    "eslint-config-prettier": "^6.12.0",
     "eslint-config-react-app": "^5.2.1",
     "eslint-plugin-flowtype": "4.x",
     "eslint-plugin-import": "2.x",
     "eslint-plugin-jsx-a11y": "6.x",
+    "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "7.x",
     "eslint-plugin-react-app": "^6.2.2",
-    "eslint-plugin-react-hooks": "2.x"
+    "eslint-plugin-react-hooks": "2.x",
+    "prettier": "2.1.2"
   }
 }

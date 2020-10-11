@@ -7,6 +7,8 @@ module.exports = {
         "eslint:recommended",
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended",
+        "prettier/react"
     ],
     parser: "@typescript-eslint/parser",
     parserOptions: {
@@ -30,7 +32,7 @@ module.exports = {
     plugins: ["react", "react-app", "react-hooks", "@typescript-eslint"],
     rules: {
         semi: ["error", "always"],
-        quotes: ["error", "double"],
+        quotes: ["error", "single"],
         "react/prop-types": [0],
         "react-hooks/rules-of-hooks": "error",
         "@typescript-eslint/no-unused-vars": "error",
