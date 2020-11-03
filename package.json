@@ -10,9 +10,14 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.51",
     "@types/react-dom": "^16.9.0",
+    "prettier-stylelint": "^0.4.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
+    "stylelint": "^13.7.2",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-scss": "^3.18.0",
     "typescript": "~3.7.2"
   },
   "scripts": {
@@ -20,9 +25,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "$(npm bin)/eslint -c ./.eslintrc.js 'src/**/*.{ts,tsx}' && prettier --write \"./**/*.ts\" \"./**/*.tsx\"",
-    "lint:fix": "$(npm bin)/eslint --fix -c ./.eslintrc.js 'src/**/*.{ts,tsx}'",
-    "format": "prettier --write 'src/**/*.{ts,tsx}'"
+    "lint": "$(npm bin)/eslint --fix -c ./.eslintrc.js 'src/**/*.{js,jsx}' && prettier --write \"./**/*.js\" \"./**/*.jsx\" && stylelint --fix src/**/*.scss",
+    "lint:js": "$(npm bin)/eslint --fix -c ./.eslintrc.js 'src/**/*.{js,jsx}'",
+    "format:js": "prettier --write 'src/**/*.{js,jsx}'",
+    "lint:css":"stylelint --fix src/**/*.scss",
+    "format:css":"prettier-stylelint --quiet --write src/**/*.scss"
   },
   "browserslist": {
     "production": [
@@ -49,6 +56,6 @@
     "eslint-plugin-react": "7.x",
     "eslint-plugin-react-app": "^6.2.2",
     "eslint-plugin-react-hooks": "2.x",
-    "prettier": "2.1.2"
+    "prettier": "^2.1.2"
   }
 }
